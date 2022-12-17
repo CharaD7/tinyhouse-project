@@ -1,41 +1,63 @@
 module.exports = {
-    'env': {
-        'browser': true,
-        'es2021': true,
-        'node': true
+    env: {
+        browser: true,
+        es2021: true,
+        node: true
     },
-    'extends': [
+    extends: [
         'eslint:recommended',
+        'plugin:import/recommended',
+        'plugin:import/typescript',
         'plugin:react/recommended',
         'plugin:@typescript-eslint/recommended'
     ],
-    'overrides': [
+    ignorePatterns: ['!.*', '**/*.js', 'dist', 'node_modules'],
+    overrides: [
     ],
-    'parser': '@typescript-eslint/parser',
-    'parserOptions': {
-        'ecmaVersion': 'latest',
-        'sourceType': 'module'
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module'
     },
-    'plugins': [
+    plugins: [
+        'import',
         'react',
+        'simple-import-sort',
         '@typescript-eslint'
     ],
-    'rules': {
-        'indent': [
+    rules: {
+        'import/first': 'error',
+        'import/newline-after-import': 'error',
+        'import/no-duplicates': 'error',
+        'import/no-extraneous-dependencies': 'error',
+        'import/no-unresolved': ['error', { commonjs: true }],
+        'import/order': ['error',
+            {
+                groups: ['builtin', 'internal', 'external', 'parent', 'sibling', 'object', 'type', 'index'],
+                'newlines-between': 'always',
+                alphabetize: {
+                    order: 'asc',
+                    caseInsensitive: true
+                }
+            },
+        ],
+        indent: [
             'error',
             2
         ],
         'linebreak-style': [
             'error',
-            'unix'
+            'auto'
         ],
-        'quotes': [
+        quotes: [
             'error',
             'single'
         ],
-        'semi': [
+        semi: [
             'error',
             'always'
-        ]
+        ],
+        'simple-import-sort/exports': 'error',
+        'simple-import-sort/imports': 'error',
     }
 };

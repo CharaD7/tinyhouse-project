@@ -1,10 +1,13 @@
 {
 	"compilerOptions": {
 		"esModuleInterop": true,
+		"baseUrl": "./src",
 		"module": "commonjs",
 		"outDir": "./build",
 		"paths": {
-			"~components": ["components/"]
+			"~components": [
+				"components/"
+			]
 		},
 		"rootDir": "./src",
 		"strict": true,
