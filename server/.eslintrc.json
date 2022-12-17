@@ -3,15 +3,29 @@
 		"node": true
 	},
 	"extends": [
-		"plugin:@typescript-eslint/recommended"
+		"plugin:@typescript-eslint/recommended",
+		"plugin:import/recommended"
 	],
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
 		"ecmaVersion": 13,
 		"sourceType": "module"
 	},
+	"plugin": [
+		"react",
+		"simple-import-sort"
+	],
+	"project": ["./tsconfig.json"],
 	"rules": {
 		"indent": "off",
-		"@typescript-eslint/indent": "off"
+		"@typescript-eslint/indent": "off",
+		"semi-spacing": ["error", { "before": false, "after": true }],
+		"simple-import-sort/exports": "error",
+		"simple-import-sort/imports": "error"
+	},
+	"settings": {
+		"import/resolver": {
+			"typescript": {}
+		}
 	}
 }

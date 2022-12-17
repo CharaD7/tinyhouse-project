@@ -3,6 +3,9 @@
 		"esModuleInterop": true,
 		"module": "commonjs",
 		"outDir": "./build",
+		"paths": {
+			"~components": ["components/"],
+		},
 		"rootDir": "./src",
 		"strict": true,
 		"target": "es6"
