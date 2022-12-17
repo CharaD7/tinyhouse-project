@@ -1,0 +1,13 @@
+{
+  "name": "tinyhouse-project",
+  "version": "1.0.0",
+  "description": "A build through tinyhouse",
+  "main": "index.js",
+  "repository": "git@github.com:CharaD7/tinyhouse-project.git",
+  "author": "CharaD7 <jijakahn6@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
