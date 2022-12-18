@@ -49,7 +49,7 @@ export const listings: Listing[] = [
 		title: 'Broad Kitchen with nicely furnished rooms',
 		image: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=80',
 		address: '100 Hollywood Hills Dr, Los Angeles, California',
-		price: 10000,
+		price: 14000,
 		numOfGuests: 2,
 		numOfBeds: 1,
 		numOfBaths: 2,
