@@ -26,6 +26,7 @@ module.exports = {
         '@typescript-eslint'
     ],
     rules: {
+        '@typescript-eslint/explicit-function-return-type': 'off',
         'import/first': 'error',
         'import/newline-after-import': 'error',
         'import/no-duplicates': 'error',
