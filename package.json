@@ -31,5 +31,9 @@
   "scripts": {
     "start": "ts-node src/index.ts",
     "build": "tsc -p ./"
+  },
+  "lint-staged": {
+    "*": "prettier --ignore-unknown --write",
+    "*.{.ts,tsx}": "eslint --fix"
   }
 }

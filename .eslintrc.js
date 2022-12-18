@@ -11,7 +11,7 @@ module.exports = {
         'plugin:react/recommended',
         'plugin:@typescript-eslint/recommended'
     ],
-    ignorePatterns: ['!.*', '**/*.js', 'dist', 'node_modules'],
+    ignorePatterns: ['**/*.js', 'dist', 'node_modules'],
     overrides: [
     ],
     parser: '@typescript-eslint/parser',
@@ -59,5 +59,13 @@ module.exports = {
         ],
         'simple-import-sort/exports': 'error',
         'simple-import-sort/imports': 'error',
+    },
+    settings: {
+        'import/resolver': {
+            typescript: {}
+        },
+        react: {
+            version: 'detect'
+        }
     }
 };
