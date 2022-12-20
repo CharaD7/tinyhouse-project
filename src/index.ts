@@ -8,15 +8,18 @@ const port = 9000;
 
 app.use(bodyParser.json());
 
-const one = 1;
-const two = 2;
-
-app.get('/', (req, res) => res.send(`1 + 2 = ${one + two}`));
-
 app.get('/listings', (req, res) => res.send(listings));
 
-app.get('/delete-listing', (req, res) => {
-	const id = req.body.id;
+app.post('/delete-listing', (req, res) => {
+	const id: string = req.body.id;
+
+	for (let i = 0; i < listings.length; i++) { // check for the particular id specified
+		if (listings[i].id === id) { // if the id is found
+			return res.send(listings.splice(i, 1)); // splice deletes the id and returns the message, but we use 1 since we only want to delete one item
+		}
+	}
+
+	return res.send("Failed to delete listing"); // if id does not exist
 });
 
 app.listen(port);
