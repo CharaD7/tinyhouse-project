@@ -9,7 +9,7 @@
         "./src/components"
       ]
     },
-    "rootDir": ".",
+    "rootDir": "./src",
     "strict": true,
     "target": "es6"
   }
