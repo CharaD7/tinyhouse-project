@@ -1,13 +1,15 @@
 {
   "compilerOptions": {
     "esModuleInterop": true,
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "module": "commonjs",
     "outDir": "./build",
     "paths": {
-      "~components": ["components/"]
+      "~components": [
+        "./src/components"
+      ]
     },
-    "rootDir": "./src",
+    "rootDir": ".",
     "strict": true,
     "target": "es6"
   }
