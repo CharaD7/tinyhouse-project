@@ -5,12 +5,10 @@
     "module": "commonjs",
     "outDir": "./build",
     "paths": {
-      "~components": [
-        "./src/components"
-      ]
+      "~components": ["./src/components"]
     },
     "rootDir": "./src",
     "strict": true,
-    "target": "es6"
+    "target": "es2022"
   }
 }
