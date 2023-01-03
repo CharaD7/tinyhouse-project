@@ -1,6 +1,6 @@
 import { gql } from 'apollo-server-express';
 
-export const typeDefs = gql`
+const typeDefs = gql`
   type Listing {
     id: ID!
     title: String!
@@ -21,3 +21,5 @@ export const typeDefs = gql`
     deleteListing(id: ID!): Listing!
   }
 `;
+
+export default typeDefs;
