@@ -13,6 +13,8 @@ const startServer = async () => {
   server.applyMiddleware({ app, path: '/api' });
 };
 
+// FIX: The use of IResolvers is no longer supported in latest version of GraphQL
+
 startServer();
 app.listen(port);
 

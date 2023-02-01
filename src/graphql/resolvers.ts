@@ -1,5 +1,5 @@
 import { IResolvers } from '@graphql-tools/utils';
-import { listings } from 'src/listing';
+import { listings } from '../listing';
 
 const resolvers: IResolvers = {
   Query: {
@@ -14,9 +14,9 @@ const resolvers: IResolvers = {
         if (listings[i].id === id) {
           return listings.splice(i, 1)[0];
         }
-      }
 
-      throw new Error('Failed to delete listing');
+        throw new Error('Failed to delete listing');
+      }
     },
   },
 };
