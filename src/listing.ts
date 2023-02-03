@@ -73,7 +73,7 @@ export const listings: Listing[] = [
   },
   {
     id: '006',
-    title: 'Clean and fully fursnished apartment with library',
+    title: 'Clean and fully furnished apartment with library',
     image:
       'https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
     address: '699 Hollywood Hills Dr, Los Angeles, California',
