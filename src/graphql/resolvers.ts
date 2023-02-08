@@ -2,7 +2,6 @@ import { IResolvers } from '@graphql-tools/utils';
 import { ObjectId } from 'mongodb';
 
 import { Database } from '..//lib/types';
-import { listings } from '../listing';
 
 const resolvers: IResolvers = {
   Query: {
