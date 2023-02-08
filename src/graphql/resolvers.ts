@@ -1,10 +1,12 @@
 import { IResolvers } from '@graphql-tools/utils';
+
+import { Database } from '..//lib/types';
 import { listings } from '../listing';
 
 const resolvers: IResolvers = {
   Query: {
-    listings: () => {
-      return listings;
+    listings: async (_root: undefined, _args: {}, { db }: { db: Database }) => {
+      return await db.listings.find({}).toArray();
     },
   },
 
