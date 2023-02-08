@@ -1,4 +1,5 @@
 import { IResolvers } from '@graphql-tools/utils';
+import { ObjectId } from 'mongodb';
 
 import { Database } from '..//lib/types';
 import { listings } from '../listing';
@@ -11,14 +12,20 @@ const resolvers: IResolvers = {
   },
 
   Mutation: {
-    deleteListing: (_root: undefined, { id }: { id: string }) => {
-      for (let i = 0; i < listings.length; i++) {
-        if (listings[i].id === id) {
-          return listings.splice(i, 1)[0];
-        }
+    deleteListing: async (
+      _root: undefined,
+      { id }: { id: string },
+      { db }: { db: Database },
+    ) => {
+      const deleteResult = await db.listings.findOneAndDelete({
+        _id: new ObjectId(id),
+      });
 
+      if (!deleteResult.value) {
         throw new Error('Failed to delete listing');
       }
+
+      return deleteResult.value;
     },
   },
 };
