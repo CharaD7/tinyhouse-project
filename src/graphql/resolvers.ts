@@ -33,7 +33,7 @@ const resolvers: IResolvers = {
   },
 
   Listing: {
-    title: (listing: Listing): string => listing._id.toString(),
+    id: (listing: Listing): string => listing._id.toString(),
   },
 };
 
