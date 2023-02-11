@@ -5,7 +5,10 @@
     "module": "commonjs",
     "outDir": "./build",
     "paths": {
-      "~components": ["./src/components"]
+      "~components/*": ["./src/components/*"],
+      "~database/*": ["./src/database/*"],
+      "~graphql/*": ["./src/graphql/*"],
+      "~lib/*": ["./src/lib/*"]
     },
     "rootDir": "./src",
     "strict": true,
