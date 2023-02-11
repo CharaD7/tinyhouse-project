@@ -3,7 +3,7 @@ import { ObjectId } from 'mongodb';
 
 import { Database, Listing } from '~lib/types';
 
-const resolvers: IResolvers = {
+const listingResolvers: IResolvers = {
   Query: {
     listings: async (
       _root: undefined,
@@ -37,4 +37,4 @@ const resolvers: IResolvers = {
   },
 };
 
-export default resolvers;
+export default listingResolvers;
