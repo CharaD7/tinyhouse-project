@@ -1,5 +1,7 @@
+// eslint-disable-next-line import/order
 import { MongoClient, ServerApiVersion } from 'mongodb';
-import { Database } from '../lib/types';
+
+import { Database } from '~lib/types';
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_USER_PASSWORD}@${process.env.DB_CLUSTER}.mongodb.net/?retryWrites=true&w=majority`;
 

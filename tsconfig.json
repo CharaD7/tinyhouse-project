@@ -6,9 +6,13 @@
     "outDir": "./build",
     "paths": {
       "~components/*": ["./src/components/*"],
+      "~components": ["./src/components"],
       "~database/*": ["./src/database/*"],
-      "~graphql/*": ["./src/graphql/*"],
-      "~lib/*": ["./src/lib/*"]
+      "~database": ["./src/database"],
+      "~graphQl/*": ["./src/graphql/*"],
+      "~graphQl": ["./src/graphql"],
+      "~lib/*": ["./src/lib/*"],
+      "~lib": ["./src/lib"]
     },
     "rootDir": "./src",
     "strict": true,

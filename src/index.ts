@@ -1,9 +1,11 @@
-require('dotenv').config();
-
-import express, { Application } from 'express';
+/* eslint-disable @typescript-eslint/no-var-requires */
 import { ApolloServer } from 'apollo-server-express';
+import express, { Application } from 'express';
+
 import { connectDatabase } from './database';
-import { typeDefs, resolvers } from './graphql';
+import { resolvers, typeDefs } from './graphql';
+
+require('dotenv').config();
 
 const mount = async (app: Application) => {
   const server = new ApolloServer({

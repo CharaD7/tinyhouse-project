@@ -1,5 +1,8 @@
-import { IResolvers } from '@graphql-tools/utils';
+// eslint-disable-next-line import/order
 import { ObjectId } from 'mongodb';
+
+// eslint-disable-next-line import/order
+import { IResolvers } from '@graphql-tools/utils';
 
 import { Database, Listing } from '~lib/types';
 
@@ -7,11 +10,10 @@ const listingResolvers: IResolvers = {
   Query: {
     listings: async (
       _root: undefined,
+      // eslint-disable-next-line @typescript-eslint/ban-types
       _args: {},
       { db }: { db: Database },
-    ): Promise<Listing[]> => {
-      return await db.listings.find({}).toArray();
-    },
+    ): Promise<Listing[]> => await db.listings.find({}).toArray(),
   },
 
   Mutation: {

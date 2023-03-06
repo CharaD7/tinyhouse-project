@@ -1,9 +1,10 @@
-require('dotenv').config();
-
-import { connectDatabase } from '../src/database';
-import { Listing } from '../src/lib/types';
-
 import { ObjectId } from 'mongodb';
+
+import { connectDatabase } from '~database';
+import { Listing } from '~lib/types';
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+require('dotenv').config();
 
 const seed = async () => {
   try {

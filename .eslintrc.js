@@ -20,6 +20,7 @@ module.exports = {
   },
   plugins: ['import', 'react', 'simple-import-sort', '@typescript-eslint'],
   rules: {
+    'arrow-body-style': ['error', 'as-needed'],
     '@typescript-eslint/explicit-function-return-type': 'off',
     'import/first': 'error',
     'import/newline-after-import': 'error',
@@ -29,16 +30,7 @@ module.exports = {
     'import/order': [
       'error',
       {
-        groups: [
-          'builtin',
-          'internal',
-          'external',
-          'parent',
-          'sibling',
-          'object',
-          'type',
-          'index',
-        ],
+        pathGroupsExcludedImportTypes: ['react'],
         'newlines-between': 'always',
         alphabetize: {
           order: 'asc',
@@ -47,12 +39,40 @@ module.exports = {
       },
     ],
     indent: ['error', 2],
-    'linebreak-style': ['error', 'auto'],
+    'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
     'simple-import-sort/exports': 'error',
     'simple-import-sort/imports': 'error',
   },
+  overrides: [
+    {
+      files: ['**/*.ts', '**/*.tsx'],
+      rules: {
+        'simple-import-sort/imports': [
+          'error',
+          {
+            groups: [
+              // `react` first, `next` second, then packages starting with a character
+              ['^react$', '^next', '^[a-z]'],
+              // Packages starting with `@`
+              ['^@'],
+              // Packages starting with `~`
+              ['^~'],
+              // Imports starting with `../`
+              ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+              // Imports starting with `./`
+              ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+              // Style imports
+              ['^.+\\.s?css$'],
+              // Side effect imports
+              ['^\\u0000'],
+            ],
+          },
+        ],
+      },
+    },
+  ],
   settings: {
     'import/resolver': {
       typescript: {},
