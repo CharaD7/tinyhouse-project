@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/order
 import { MongoClient, ServerApiVersion } from 'mongodb';
 
 import { Database } from '~lib/types';
