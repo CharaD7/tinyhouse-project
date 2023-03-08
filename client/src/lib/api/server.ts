@@ -2,7 +2,7 @@ interface Body {
   query: string;
 }
 
-export const Server = {
+export const server = {
   fetch: async (body: Body) => {
     const res = await fetch('/api', {
       method: 'POST',

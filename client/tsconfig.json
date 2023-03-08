@@ -4,6 +4,14 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
+    "paths": {
+      "~components/*": ["./src/components/*"],
+      "~components": ["./src/components"],
+      "~graphQl/*": ["./src/graphql/*"],
+      "~graphQl": ["./src/graphql"],
+      "~lib/*": ["./src/lib/*"],
+      "~lib": ["./src/lib"]
+    },
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
